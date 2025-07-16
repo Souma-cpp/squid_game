@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= player.ingameName %> | Squid Game Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-gradient-to-r from-[#221f1f] to-[#e50914] text-white font-sans"
+  >
+    <%- include("loader") %>
+
+    <div id="page-content" class="opacity-0 transition-opacity duration-700">
+      <main
+        class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10"
+      >
+        <div
+          class="w-full md:w-1/2 max-w-md bg-black/40 rounded-xl overflow-hidden shadow-lg"
+        >
+          <img
+            src="<%= player.imageUrl %>"
+            alt="<%= player.ingameName %>"
+            class="w-full h-96 object-contain object-top bg-black"
+          />
+        </div>
+
+        <div
+          class="w-full md:w-1/2 max-w-xl bg-black/40 rounded-xl p-6 md:p-8 shadow-xl backdrop-blur-md space-y-6"
+        >
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <%= player.ingameName %>
+          </h1>
+          <p class="text-lg">
+            <span class="font-semibold text-pink-300">Real Name:</span>
+            <%= player.realName %>
+          </p>
+          <% if (player.playerNumber) { %>
+          <p class="text-lg">
+            <span class="font-semibold text-pink-300">Player Number:</span>
+            #<%= player.playerNumber %>
+          </p>
+          <% } %>
+
+          <div class="space-y-2">
+            <h2 class="text-xl font-bold text-yellow-200">Behaviour Traits</h2>
+            <p class="text-base italic"><%= player.behaviour %></p>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-xl font-bold text-yellow-200">Backstory</h2>
+            <p class="text-base leading-relaxed"><%= player.background %></p>
+          </div>
+
+          <a
+            href="/players"
+            class="inline-block mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition"
+          >
+            ← Back to Players
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <%- include("scripts") %>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Players | Squid Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-gradient-to-r from-[#e50914] to-[#221f1f] font-sans text-white"
+  >
+    <%- include("loader") %>
+
+    <div id="page-content" class="opacity-0 transition-opacity duration-700">
+      <div class="min-h-screen px-6 py-10">
+        <h1 class="text-4xl text-center font-extrabold mb-10">
+          Meet the most popular Squid Game Players
+        </h1>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <% for (let player of players) { %>
+          <a
+            href="/player/<%= player.id %>"
+            class="w-full sm:w-[45%] lg:w-[30%] bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white shadow-lg hover:scale-105 hover:bg-black/40 transition-all duration-300 ease-in-out cursor-pointer"
+          >
+            <div class="flex flex-col h-full">
+              <img
+                src="<%= player.imageUrl %>"
+                class="w-full h-60 object-contain object-top bg-black"
+                alt="<%= player.ingameName %>"
+              />
+              <div class="p-4 text-sm space-y-2">
+                <h2 class="text-lg font-semibold"><%= player.ingameName %></h2>
+                <p><strong>Real Name:</strong> <%= player.realName %></p>
+                <% if (player.playerNumber) { %>
+                <p><strong>Player No:</strong> <%= player.playerNumber %></p>
+                <% } %>
+                <p><strong>Background:</strong> <%= player.background %></p>
+              </div>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <%- include("scripts") %>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squid Game Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="font-sans bg-gradient-to-r from-[#e50914] to-[#221f1f] text-white"
+  >
+    <%- include("loader") %>
+
+    <div id="page-content" class="opacity-0 transition-opacity duration-700">
+      <header class="border-b border-white py-6 flex justify-center">
+        <h1 class="text-4xl font-extrabold text-center tracking-wide">
+          Welcome to the Squid Game Universe
+        </h1>
+      </header>
+
+      <section class="flex justify-center px-4 md:px-20 py-10">
+        <div class="max-w-[960px] w-full">
+          <div
+            class="p-4 rounded-xl flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat min-h-[480px]"
+            style="
+              background-image: linear-gradient(
+                  rgba(0, 0, 0, 0.1),
+                  rgba(0, 0, 0, 0.6)
+                ),
+                url('https://lh3.googleusercontent.com/aida-public/AB6AXuCn3-F3Lc-AGat6P7-s4bxWjFgj0gdQsRsNCtJZapecqPI6JFlimZu9k6Gg-CSl8iKMrGpqgcuOYFaBgpwCv_Zx1I4HwagFpAw4bLL2i7OuRNMVMyO1yozsyQGQz2He8BsU37910J-14svzYv9UKC56cnoF4UXjtUpRFRYUmEMgEFgEAEx_RaX5J_3LHDFJdFylW0cByB0zOtj2I5tSyoA3WBYDlyBM624ErY-S2zp2zLTHTO9Jlt-ivTQTLbB8Bo0UqBSbn_7JSZ4');
+            "
+          >
+            <h2
+              class="text-3xl md:text-5xl font-black tracking-tight mt-16 text-center"
+            >
+              The players are waiting
+            </h2>
+            <p class="text-xl mt-2 italic text-center">Let the games begin.</p>
+
+            <a href="/players">
+              <button
+                class="mt-6 bg-gradient-to-r from-[#e50914] to-[#221f1f] text-white font-bold text-sm md:text-base rounded-full px-6 py-3 hover:opacity-90 transition-all duration-300 shadow-md"
+              >
+                Explore the Players
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <%- include("scripts") %>
+  </body>
+</html>
